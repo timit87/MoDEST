@@ -296,11 +296,13 @@
 				.b-content__team-content-wrap {
 					margin-bottom: 100px;
 					height:375px;
-					width:100%;
+					
+					min-width:1100px;
+					display: flex;
+					justify-content: space-between;
 				}
 					.b-content__team-content-photo {
 						float: left;
-						margin-right:2%;
 						width:23%;
 						height:375px;
 						min-width:260px;
@@ -311,6 +313,7 @@
 							opacity: 0;
 							width:14%;
 							height:300px;
+							min-width:260px;
 							transition: all 0.3s ease-out;
 						}
 							.m-content__team_hover .b-content__team-content-photo-shadow {
@@ -436,12 +439,12 @@
 				.b-content__work-content-photo-wrap {
 					width:100%;
 					min-width: 1100px;
+					display: flex;
+					justify-content: space-between;
 				}
 					.b-content__work-content-photo {
 						width: 30%;
-						margin: -30px 3% 60px 0; 
-						float:left;
-						
+						margin: -30px 0 60px 0; 
 					}
 						.b-content__work-content-photo-shadow {
 							opacity: 0;
@@ -534,7 +537,7 @@
 					border-radius: 6px;
 					line-height: 45px;
 					text-align:center;
-					margin:60px auto;
+					margin:0px auto;
 					min-width: 125px;
 				}
 					.b-content__work-button:hover {
@@ -549,7 +552,7 @@
 			padding-top:80px;
 		}					
 			.b-content__services-title {
-				margin: 0 0 60px 20%;	
+				margin: 0 0 60px 0;	
 				color: #292F36;
 				font-size: 36px;
 				font-family: 'quattrocento_sans_bold';
@@ -562,13 +565,24 @@
 			}
 				.b-content__services-content {
 					text-align:center;
-					min-width: 900px;
+					min-width: 1100px;
+					display: flex;
+					justify-content: space-between;
+					margin: 0 0 60px 0;
 				}
 					.b-content__services-content-inner {
 						width:23%;
-						float:left;
-						padding: 0 2% 55px 0;
+						transition: all 0.2s ease-out;
+						float: left;
 					}
+						.b-content__services-content-inner:hover {
+							transform: scale(1.05);
+							border: 1px solid #292F36;
+							border-radius: 6px;
+							background-color: #F5F5F5;
+							padding: 10px;
+							margin: -10px;
+						}
 						.b-content__services-content-inner-icon {
 							padding: 35px;
 						}
@@ -603,18 +617,42 @@
 					border-left: 10px solid #4E5A62;
 					padding-left:15px;
 				}
+				
+				.b-content__features-block-wrap {
+					display: flex;
+					justify-content: space-between;
+				}
 				.b-content__features-block {
 					width: 31%;
-					margin-right:2%;
 					float: left;
 					min-width: 330px;
+					transition: all 0.2s ease-out;
 				}
+					.b-content__features-block:hover {
+						transform: scale(1.05);
+						border: 1px solid #292F36;
+						border-radius: 6px;
+						background-color: #414D56;
+						padding: 10px;
+						margin: 0 -10px;
+					}
+					.m-content__features-block_mid {
+						margin: 0 2%;
+					}
 					.b-content__features-block-photo {
 						display:block;
 						height:240px;
 					}
 						.m-content__features-block-photo-1 {
 							background:url('../images/bg-content-features-1.png') no-repeat;
+							background-size:cover;
+						}
+						.m-content__features-block-photo-2 {
+							background:url('../images/bg-content-features-2.png') no-repeat;
+							background-size:cover;
+						}
+						.m-content__features-block-photo-3 {
+							background:url('../images/bg-content-features-3.png') no-repeat;
 							background-size:cover;
 						}
 					.b-content__features-block-title {
@@ -630,14 +668,7 @@
 						font-family:'open_sans';
 						line-height:1.5;
 					}
-						.m-content__features-block-photo-2 {
-							background:url('../images/bg-content-features-2.png') no-repeat;
-							background-size:cover;
-						}
-						.m-content__features-block-photo-3 {
-							background:url('../images/bg-content-features-3.png') no-repeat;
-							background-size:cover;
-						}
+						
 		.b-content__contact {
 			clear: both;
 			height: 400px;
@@ -772,6 +803,7 @@
 				float:left;
 				width:20%;
 				height:95px;
+				transition: all 0.2s ease-out;
 			}
 				.m-footer__link-item_tw {
 					background:url('../images/button-content-about-tw.png') no-repeat;
@@ -793,7 +825,9 @@
 					background:url('../images/button-content-about-g.png') no-repeat;
 					background-position:center;
 				}
-	
+				.b-footer__link-item:hover {
+					transform: scale(1.5);
+				}
 	
 	
 	

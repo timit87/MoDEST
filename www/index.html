@@ -9,10 +9,17 @@
 		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 		
+		<link rel="stylesheet" type="text/css" href="FancyBox/source/jquery.fancybox.css" />
+		<link rel="stylesheet" type="text/css" href="FancyBox/source/helpers/jquery.fancybox-buttons.css" />
+		<link rel="stylesheet" type="text/css" href="FancyBox/source/helpers/jquery.fancybox-thumbs.css" />
+		
 		<link rel="stylesheet" type="text/css" href="css/reset-min.css">
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
 		<link rel="stylesheet" type="text/css" href="css/fonts.css">
+		
 		<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+		<script type="text/javascript" src="FancyBox/source/jquery.fancybox.js"></script>
+		
 	</head>
 	<body>
 		<div class="l-header">
@@ -161,15 +168,15 @@
 							<div class="b-content__work-content-photo">
 								<div class="b-content__work-content-photo-shadow">
 									<p class="b-content__work-content-photo-shadow-color"></p>
-									<p class="b-content__work-content-photo-shadow-zoomed"></p>
+									<a class="b-content__work-content-photo-shadow-zoomed fancybox-work" href="images/bg-content-work-1.png" data-fancybox-group="gallery"></a>
 									<p class="b-content__work-content-photo-text">partnership guidlines</p>
 								</div>
-								<a href="#" class="b-content__work-content-photo-1"></a>
+								<a class="b-content__work-content-photo-1 fancybox-work"></a>
 							</div>
 							<div class="b-content__work-content-photo">
 								<div class="b-content__work-content-photo-shadow">
 									<p class="b-content__work-content-photo-shadow-color"></p>
-									<p class="b-content__work-content-photo-shadow-zoomed"></p>
+									<a class="b-content__work-content-photo-shadow-zoomed fancybox-work" href="images/bg-content-work-2.png" data-fancybox-group="gallery"></a>
 									<p class="b-content__work-content-photo-text">partnership guidlines</p>
 								</div>
 								<a href="#" class="b-content__work-content-photo-2"></a>
@@ -177,15 +184,17 @@
 							<div class="b-content__work-content-photo">
 								<div class="b-content__work-content-photo-shadow">
 									<p class="b-content__work-content-photo-shadow-color"></p>
-									<p class="b-content__work-content-photo-shadow-zoomed"></p>
+									<a class="b-content__work-content-photo-shadow-zoomed fancybox-work" href="images/bg-content-work-3.png" data-fancybox-group="gallery"></a>
 									<p class="b-content__work-content-photo-text">partnership guidlines</p>
 								</div>
 								<a href="#" class="b-content__work-content-photo-3"></a>
 							</div>
+						</div>
+						<div class="b-content__work-content-photo-wrap">
 							<div class="b-content__work-content-photo">
 								<div class="b-content__work-content-photo-shadow">
 									<p class="b-content__work-content-photo-shadow-color"></p>
-									<p class="b-content__work-content-photo-shadow-zoomed"></p>
+									<a class="b-content__work-content-photo-shadow-zoomed fancybox-work" href="images/bg-content-work-4.png" data-fancybox-group="gallery"></a>
 									<p class="b-content__work-content-photo-text">partnership guidlines</p>
 								</div>
 								<a href="#" class="b-content__work-content-photo-4"></a>
@@ -193,7 +202,7 @@
 							<div class="b-content__work-content-photo">
 								<div class="b-content__work-content-photo-shadow">
 									<p class="b-content__work-content-photo-shadow-color"></p>
-									<p class="b-content__work-content-photo-shadow-zoomed"></p>
+									<a class="b-content__work-content-photo-shadow-zoomed fancybox-work" href="images/bg-content-work-5.png" data-fancybox-group="gallery"></a>
 									<p class="b-content__work-content-photo-text">partnership guidlines</p>
 								</div>
 								<a href="#" class="b-content__work-content-photo-5"></a>
@@ -201,7 +210,7 @@
 							<div class="b-content__work-content-photo">
 								<div class="b-content__work-content-photo-shadow">
 									<p class="b-content__work-content-photo-shadow-color"></p>
-									<p class="b-content__work-content-photo-shadow-zoomed"></p>
+									<a class="b-content__work-content-photo-shadow-zoomed fancybox-work" href="images/bg-content-work-6.png" data-fancybox-group="gallery"></a>
 									<p class="b-content__work-content-photo-text">partnership guidlines</p>
 								</div>
 								<a href="#" class="b-content__work-content-photo-6"></a>
@@ -212,8 +221,8 @@
 				</div>
 				
 				<div class="b-content__services" id="service">
-					<h2 class="b-content__services-title">what we do.</h2>
 					<div class="b-content__services-content-wrap">
+					<h2 class="b-content__services-title">what we do.</h2>
 						<div class="b-content__services-content">
 							<div class="b-content__services-content-inner">
 								<p class="b-content__services-content-inner-icon"><img src="images/bg-content-srvices-gear.png"></p>
@@ -264,20 +273,22 @@
 				<div class="b-content__features" id="features">
 					<div class="b-content__features-content">
 						<h2 class="b-content__features-content-title">FEATURES.</h2>
-						<div class="b-content__features-block">
-							<p class="b-content__features-block-photo m-content__features-block-photo-1"></p>
-							<p class="b-content__features-block-title">Product Design: Eames Chairs</p>
-							<p class="b-content__features-block-text">Eames designs are certainly iconic. Everyone of us know at least two or three of their famous chairs. I would even risk saying that most of us dream about having a nice Eames.</p>
-						</div>
-						<div class="b-content__features-block">
-							<p class="b-content__features-block-photo m-content__features-block-photo-2"></p>
-							<p class="b-content__features-block-title">Elegant and Colorful Logos</p>
-							<p class="b-content__features-block-text">I’ve always found logo design to be one of the most challenging things to get right. There’s so much that a logo can say about a brand without actually saying it.</p>
-						</div>
-						<div class="b-content__features-block">
-							<p class="b-content__features-block-photo m-content__features-block-photo-3"></p>
-							<p class="b-content__features-block-title">A Showcase of Creati</p>
-							<p class="b-content__features-block-text">It’s always interesting to see another designer’s take on a famous website, app or even physical product. Different designers add their own personality and style.</p>
+						<div class="b-content__features-block-wrap">
+							<div class="b-content__features-block">
+								<a class="b-content__features-block-photo m-content__features-block-photo-1 fancybox" href="images/bg-content-features-1.png"></a>
+								<p class="b-content__features-block-title">Product Design: Eames Chairs</p>
+								<p class="b-content__features-block-text">Eames designs are certainly iconic. Everyone of us know at least two or three of their famous chairs. I would even risk saying that most of us dream about having a nice Eames.</p>
+							</div>
+							<div class="b-content__features-block m-content__features-block_mid">
+								<a class="b-content__features-block-photo m-content__features-block-photo-2 fancybox" href="images/bg-content-features-2.png"></a>
+								<p class="b-content__features-block-title">Elegant and Colorful Logos</p>
+								<p class="b-content__features-block-text">I’ve always found logo design to be one of the most challenging things to get right. There’s so much that a logo can say about a brand without actually saying it.</p>
+							</div>
+							<div class="b-content__features-block">
+								<a class="b-content__features-block-photo m-content__features-block-photo-3 fancybox" href="images/bg-content-features-3.png"></a>
+								<p class="b-content__features-block-title">A Showcase of Creati</p>
+								<p class="b-content__features-block-text">It’s always interesting to see another designer’s take on a famous website, app or even physical product. Different designers add their own personality and style.</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -323,7 +334,11 @@
 				</div>
 			</div>
 		</div>
+		
+		
 		<script type="text/javascript" src="slick/slick.min.js"></script>
+		<script type="text/javascript" src="FancyBox/source/jquery.fancybox.js"></script>
+		
 		<script type="text/javascript" src="js/script.js"></script>
 		
 	</body>

@@ -54,4 +54,35 @@ $('.b-content__home-content-wrap').slick({
   infinite: false,
   speed: 300,
 });
+	
+$(document).ready(function() {
+	$('a.fancybox').fancybox({
+		padding: 10,
+
+		openEffect : 'elastic',
+		openSpeed  : 300,
+
+		closeEffect : 'fade',
+		closeSpeed  : 300,
+
+		closeClick : true,
+		
+		closeBtn : false,
+		
+		minHeight : 700,
+		
+		openOpacity : true,
+		
+		helpers : {
+			overlay : {
+				closeClick : false
+			}
+		}
+	});
+	
+	$('a.fancybox-work').fancybox({
+		minHeight : 700
+	});
+});
+
 
