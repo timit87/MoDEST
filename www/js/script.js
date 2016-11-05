@@ -2,52 +2,52 @@ $(window).on('scroll',function () { //скролл l-header по горизон�
 	$('.l-header').css("left", -$(this).scrollLeft() + "px");
 });
 
-$('.b-header__menu').on("click","a", function (event) {	//отменяем стандартную обработку нажатия по ссылке
-	    event.preventDefault();							//забираем идентификатор бока с атрибута href
-	    var id  = $(this).attr('href'),					//узнаем высоту от начала страницы до блока на который ссылается якорь
-	        top = $(id).offset().top;					//анимируем переход на расстояние - top за время мс
-	    $('body,html').animate({scrollTop: top}, 500);
-		
-});
-
-$('.b-header__menu-item').on('click', function() {   	// клин на пункты меню header
-	if(!$(this).hasClass('m-header__menu-item_active')) { 
-		$('.b-header__menu-item').removeClass('m-header__menu-item_active');
-		$(this).addClass('m-header__menu-item_active');	
-		}
-});
-
-$('.b-header__logo').on('click', function() {			//клик на логотип, возвращает на начало страницы
-	var top;
-	if ($(this).hasClass('m-header__logo_click')) {
+$('.b-header').on('click','a', function () { // отслеживаем клик на все теги <a> внутри блока .b-header
+	var $this = $(this), // просто так удобнее, как хорошая привычка, в данном случае не обязательно
+		top;
+	//$('.b-header__menu-item').removeClass('m-header__menu-item_active'); // удаляем модификатор active со всех пунктов меню (см. коментарий под этим примером)
+	
+	if ($this.hasClass('b-header__logo')) { // клик на логотип
 		top = 0;
-		$('.b-header__menu-item').removeClass('m-header__menu-item_active');
+	} else { // клик на остальные ссылки
+	//	$this.addClass('m-header__menu-item_active');  // добавляем модификатор active на кликнутый пункт меню (см. коментарий под этим примером)
+		top = $($this.attr('href')).offset().top; // так же как у тебя в скрипте получаю расстояние до элемента, только объединил 2 строки в одну (необязательно)
 	}
-	$('html, body').animate({scrollTop: top}, 500);
-	return false;
+	$('body,html').animate({scrollTop: top}, 200); // скролл не менял
+	
+	return false; // отмена поведения кликнутой ссылки по умолчанию, найди и перечитай мое письмо по поводу return false, prevendDefault и stopPropagation, т.к. ты их испольуешь, но разницы не понимаешь
 });
 
-$('.b-content__team-content-photo').hover(function(){	//hover на блок team
-	$(this).addClass('m-content__team_hover');}, function(){
-		$(this).removeClass('m-content__team_hover'); 
+$(window).on('scroll',function () {
+	
+	var topabout=$("#about").offset().top, 
+		topteam=$("#team").offset().top, 
+		topwork=$("#work").offset().top, 
+		topservice=$("#service").offset().top,
+		topfeatures=$("#features").offset().top,
+		topcontact=$("#contact").offset().top;
+	
+	$('.b-header__menu-item').removeClass('m-header__menu-item_active');
+	
+	if (window.scrollY < 10 ) {
+		$('.m-header__menu-item_home').removeClass('m-header__menu-item_active');
+	} else if (window.scrollY < topabout-250) {
+		$('.m-header__menu-item_home').addClass('m-header__menu-item_active');
+	} else if (window.scrollY < topteam-250) {
+		$('.m-header__menu-item_about').addClass('m-header__menu-item_active');
+	} else if (window.scrollY < topwork-250){
+		$('.m-header__menu-item_team').addClass('m-header__menu-item_active');
+	} else if (window.scrollY < topservice-250) {
+		$('.m-header__menu-item_work').addClass('m-header__menu-item_active');
+	} else if (window.scrollY < topfeatures-250) {
+		$('.m-header__menu-item_service').addClass('m-header__menu-item_active');
+	} else if (window.scrollY < topcontact-250) {
+		$('.m-header__menu-item_features').addClass('m-header__menu-item_active');
+	} else if (window.scrollY > topcontact-250) {
+		$('.m-header__menu-item_contact').addClass('m-header__menu-item_active');
+	}
 });
 
-$('.b-content__work-content-photo').hover(function(){	//hover на блок work
-	$(this).addClass('m-content__work_hover');}, function(){
-		$(this).removeClass('m-content__work_hover'); 
-});
-
-/*$('.b-content__contact-button').on('click', function() { //popup +
-	   $('.b-content__contact-popup').slideDown(1500);
-	return false;
-});	
-
-$('.b-content__contact-button').on('click', function() { //popup -
-	   $('.b-content__contact-popup').slideUp(1500);
-	return false;
-});
-
-$('.b-content__home-content-wrap').slick();*/
 
 $('.b-content__home-content-wrap').slick({
   dots: true,
@@ -56,7 +56,11 @@ $('.b-content__home-content-wrap').slick({
 });
 	
 $(document).ready(function() {
-	$('a.fancybox').fancybox({
+	$('a.fancybox-work').fancybox({
+		minHeight : 700
+	});
+	
+	$('a.fancybox-features').fancybox({
 		padding: 10,
 
 		openEffect : 'elastic',
@@ -80,9 +84,17 @@ $(document).ready(function() {
 		}
 	});
 	
-	$('a.fancybox-work').fancybox({
-		minHeight : 700
+	$('a.fancybox-popup').fancybox({
+		minWidth : 650,
+		padding : 10,
+		
+		helpers : {
+			overlay : {
+				closeClick : false
+			}
+		}
 	});
+	
 });
 
 
