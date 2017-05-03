@@ -14,7 +14,7 @@ $('.b-header').on('click','a', function () { // отслеживаем клик 
 	
 	return false;
 });
-
+/*
 
 $(window).on('scroll',function () {
 	
@@ -45,7 +45,7 @@ $(window).on('scroll',function () {
 		$('.m-header__menu-item_contact').addClass('m-header__menu-item_active');
 	}
 });
-
+*/
   
 $('.b-content__home-content-wrap').slick({
   dots: true,
